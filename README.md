@@ -7,7 +7,7 @@ This microservice allows users to schedule, update, retrieve, and delete task re
 
 ## how to start the microservice
 
-1. prerequisites
+### 1. prerequisites
 * install **Docker**, **PostgreSQL**, and **Redis**
 * instal dependencies: **pip install fastapi pydantic celery redis uvicorn requests sqlalchemy psycopg2**
 
