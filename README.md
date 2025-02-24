@@ -75,3 +75,4 @@ This microservice allows users to schedule, update, retrieve, and delete task re
     { "status": "Reminder canceled", "task_id": 1 }
 
 ## UML sequence diagram
+![uml_task_scheduler](uml_task_scheduler.png)
