@@ -11,6 +11,14 @@ This microservice allows users to schedule, update, retrieve, and delete task re
 * install **Docker**, **PostgreSQL**, and **Redis**
 * instal dependencies: **pip install fastapi pydantic celery redis uvicorn requests sqlalchemy psycopg2**
 
+### 2. start services
+* start PostgreSQL: **docker start postgres-container**
+* start Redis: **docker start redis-container**
+* apply database migrationsL **python -c "from taskScheduler import Base, engine; Base.metadata.create_all(bind=engine)"**
+* start Celery worker: **celery -A taskScheduler.celery worker --loglevel=info --pool=solo**
+* start FastAPI: **uvicorn taskScheduler:app --reload**
+* 
+
 
 
 
