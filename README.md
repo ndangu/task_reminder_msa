@@ -9,23 +9,18 @@ This microservice allows users to schedule, update, retrieve, and delete task re
 
 ### 1. prerequisites
 * install **Docker**, **PostgreSQL**, and **Redis**
-* instal dependencies: **pip install fastapi pydantic celery redis uvicorn requests sqlalchemy psycopg2**
+* instal dependencies: pip install fastapi pydantic celery redis uvicorn requests sqlalchemy psycopg2
 
 ### 2. start services
-* start PostgreSQL: **docker start postgres-container**
-* start Redis: **docker start redis-container**
-* apply database migrationsL **python -c "from taskScheduler import Base, engine; Base.metadata.create_all(bind=engine)"**
-* start Celery worker: **celery -A taskScheduler.celery worker --loglevel=info --pool=solo**
-* start FastAPI: **uvicorn taskScheduler:app --reload**
-* 
+* start **PostgreSQL**: docker start postgres-container
+* start **Redis**: docker start redis-container
+* apply database migrations: python -c "from taskScheduler import Base, engine; Base.metadata.create_all(bind=engine)"
+* start **Celery** worker: celery -A taskScheduler.celery worker --loglevel=info --pool=solo
+* start **FastAPI**: uvicorn taskScheduler:app --reload
 
+## API endpoints
 
-
-
-
-
-
-**1. schedule a reminder**
+### 1. schedule a reminder
   * endpoint: POST /api/remidners
   * request body:
     {
@@ -38,8 +33,7 @@ This microservice allows users to schedule, update, retrieve, and delete task re
   * response:
     { "status": "Reminder scheduled", "task_id": 1 }
 
-## how to start the microservice
-**1. schedule a reminder**
+### 2. update a reminder
   * endpoint: POST /api/remidners
   * request body:
     {
