@@ -56,7 +56,7 @@ This microservice allows users to schedule, update, retrieve, and delete task re
   * endpoint: GET /api/reminders
   * request body: <br />
     [ <br />
-      { <br />
+      _ { <br />
         "title": "Updated Meeting", <br />
         "priority": "Medium", <br />
         "task_id": 1, <br />
