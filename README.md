@@ -9,7 +9,7 @@ This microservice allows users to schedule, update, retrieve, and delete task re
 
 ### 1. prerequisites
 * install **Docker**, **PostgreSQL**, and **Redis**
-* instal dependencies: pip install fastapi pydantic celery redis uvicorn requests sqlalchemy psycopg2
+* instal dependencies: _ pip install fastapi pydantic celery redis uvicorn requests sqlalchemy psycopg2
 
 ### 2. start services
 * start **PostgreSQL**: docker start postgres-container
