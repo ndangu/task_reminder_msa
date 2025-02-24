@@ -64,7 +64,6 @@ This microservice allows users to schedule, update, retrieve, and delete task re
         "due_date": "2025-02-26", <br />
         "notify_time": "2025-02-25T09:00:00" <br />
       }
-
     ] 
   * response: <br />
     { "status": "Reminder updated", "task_id": 1 }
