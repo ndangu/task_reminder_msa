@@ -76,6 +76,7 @@ This microservice allows users to schedule, update, retrieve, and delete task re
 
 ## UML sequence diagram
 sequenceDiagram
+>
     participant TestScript
     participant FastAPI
     participant PostgreSQL
