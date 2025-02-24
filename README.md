@@ -75,30 +75,3 @@ This microservice allows users to schedule, update, retrieve, and delete task re
     { "status": "Reminder canceled", "task_id": 1 }
 
 ## UML sequence diagram
-sequenceDiagram
->
-    participant TestScript
-    participant FastAPI
-    participant PostgreSQL
-    participant Celery
-    participant Redis
-
-    TestScript->>FastAPI: POST /api/reminders
-    FastAPI->>PostgreSQL: Store reminder in DB
-    FastAPI->>Celery: Schedule task
-    Celery->>Redis: Add task to queue
-    Redis-->>Celery: Task executed
-    Celery->>FastAPI: Task confirmation
-    FastAPI-->>TestScript: Reminder scheduled
-
-    TestScript->>FastAPI: GET /api/reminders
-    FastAPI->>PostgreSQL: Retrieve reminders
-    PostgreSQL-->>FastAPI: Return data
-    FastAPI-->>TestScript: Return reminder list
-
-    TestScript->>FastAPI: DELETE /api/reminders/{task_id}
-    FastAPI->>PostgreSQL: Remove reminder
-    PostgreSQL-->>FastAPI: Confirm deletion
-    FastAPI-->>TestScript: Reminder canceled
-
-
